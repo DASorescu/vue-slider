@@ -34,6 +34,7 @@
             :src="image.url" 
             :alt="image.title" 
             :class="{'active' : currentIndex === index}"
+            @click="goToClicckedImage(index)"
             />
         </div>
     </div>

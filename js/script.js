@@ -48,6 +48,9 @@ const app = new Vue ({
       },
       goToPrev(){
           this.currentIndex === 0 ? this.currentIndex = this.images.length - 1  : this.currentIndex--
+      },
+      goToClicckedImage(index){
+        this.currentIndex = index ;
       }
   },
 });
