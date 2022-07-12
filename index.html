@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- local stile -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400;600&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+    <!--VueJS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="carousel">
+        <i class="bi bi-arrow-bar-right"id="right-slider" v-on:click="goToNext"></i>
+        <i class="bi bi-arrow-bar-left"id="left-slider"v-on:click="goToPrev"></i>
+        <div id="img-container">
+            <div class="image-wrapper" :class="{'active' : currentIndex === index}" v-for="(image , index) in images">
+                <div class="image-description active" >
+                    <h2>{{image.title}}</h2>
+                    <p>{{image.description}}</p>
+                </div>
+                <img :src="image.url" :alt="image.title" :class="{'active' : currentIndex === index}">
+            </div>
+        </div>
+        <div id="thumbnail">
+            <img v-for = "(image , index) in images"  
+            :src="image.url" 
+            :alt="image.title" 
+            :class="{'active' : currentIndex === index}"
+            />
+        </div>
+    </div>
+    <!-- //Local script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+            
+            
